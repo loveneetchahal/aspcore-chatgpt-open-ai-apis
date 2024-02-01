@@ -16,10 +16,10 @@ namespace OpenAIProject.Controllers
             using (HttpClient httpClient = new())
             {
 
-                              ChatCompletionRequest completionRequest = new()
+                ChatCompletionRequest completionRequest = new()
                 {
                     Model = "gpt-3.5-turbo",
-                    MaxTokens =4000,
+                    MaxTokens = 4000,
                     Messages = new List<Message> // Initialize with a new list of messages
                     {
                         new Message
@@ -30,7 +30,7 @@ namespace OpenAIProject.Controllers
                     }
                 };
                 ChatCompletionResponse completionResponse = new();
-                string apiKey = "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";
+                string apiKey = "add-secret-key";
 
                 using var httpReq = new HttpRequestMessage(HttpMethod.Post, "https://api.openai.com/v1/chat/completions");
                 httpReq.Headers.Add("Authorization", $"Bearer {apiKey}");
